@@ -91,12 +91,18 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", authors="
-				+ Arrays.toString(authors) + ", publisher=" + publisher
-				+ ", publishingYear=" + publishingYear + ", amountOfPages="
-				+ amountOfPages + ", price=" + price + ", coverType=" + coverType + "]";
+		return "Book [id=" + id + ", name=" + name + ", authors=" + Arrays.toString(authors) + ", publisher="
+				+ publisher + ", publishingYear=" + publishingYear + ", amountOfPages=" + amountOfPages + ", price="
+				+ price + ", coverType=" + coverType + "]";
 	}
 
-	
+	public boolean hasAuthor(Author author) {
+		for (Author auth : this.authors) {
+			if (auth.getId() == author.getId()) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

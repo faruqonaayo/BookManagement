@@ -11,10 +11,8 @@ public class BookService {
 		int currentIndex = 0;
 		Book[] filteredBooks = new Book[books.length];
 		for (Book book : books) {
-			for (Author auth : book.getAuthors()) {
-				if (auth.getId() == author.getId()) {
-					filteredBooks[currentIndex++] = book;
-				}
+			if (book.hasAuthor(author)) {
+				filteredBooks[currentIndex++] = book;
 			}
 		}
 
