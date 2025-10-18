@@ -98,7 +98,8 @@ public class Book {
 
 	public boolean hasAuthor(Author author) {
 		for (Author auth : this.authors) {
-			if (auth.getId() == author.getId()) {
+			if (auth.getId() == author.getId() && auth.getFirstName() == author.getFirstName()
+					&& auth.getLastName() == author.getLastName()) {
 				return true;
 			}
 		}
